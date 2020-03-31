@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <script type="text/javascript">
+            /**
+ * @fileoverview 
+ * @author Julian peñuela id:607452
+ * @version 0.1
+ * fecha:24/03/2020
+ */
+
+             /**
+                 * a cotninuacion tenemos un algoritmo que calcula que si un año es biciesto
+                 * para ello aceptamos las condiciones de que es biciesto si es multiplo de 4 de 100 y de 400
+                 */
+            var num1 =  prompt("Ingrese  año");
+            var resto = num1 % 4;
+            var resto2 = num1 % 100;
+            var resto3 = num1 % 400;
+            
+             /**
+                 * calcula si es biciesto por 4
+                 */
+            if ( resto==0) {
+              alert("Es biciesto");
+            } else{
+                alert("No es biciesto");
+            }
+            /**
+                 * calcula si es biciesto con condicion de 100
+                 */
+             if ( resto2==0) {
+              alert("Es es biciesto");
+                    } else{
+                alert("No es biciesto");
+            }
+            
+            /**
+                 * calcula biciesto si es multiplo de 400
+                 */
+             if ( resto3==0) {
+              alert("Es es biciesto");
+                    } else{
+                alert("No es biciesto");
+            }
+        </script>
+    </body>
+</html>

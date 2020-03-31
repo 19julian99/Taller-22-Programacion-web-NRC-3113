@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+             /**
+             * @fileoverview 
+             * @author Julian peñuela id:607452
+             * @version 0.1
+             * fecha:24/03/2020
+             * 
+             * a continuacion definimos definimos variables  y leemos dos variables una para 
+             * los creditos y otra para el estrato
+             */
+            var creditos=prompt("ingrese la cantidad de creditos");
+            var valor=85000;
+            var estrato=prompt("ingrese estrato");
+            var matricula;
+            var subsido;
+            var pago;
+            var descuento;
+            
+             /**
+             *a continuacion validamos si el usuario toma mas de 20 creditos para calcular el valor de estsos y de 
+             *de la matricula
+             */
+            if (parseInt(creditos)<20) {
+            pago=(parseInt(creditos)*(parseInt(valor)));
+            }else{
+                pago=(parseInt(creditos)*((parseInt(valor)*2)));
+            }
+             /**
+             *a continuacion validamos sel descuento que se hace al estudiante dependiendo del estrato 
+             *con una regla de 3 siemple
+             */
+            if (parseInt(estrato)==1) {
+                descuento = ((pago) - (pago * 80) / 100);
+                
+            }
+            if (parseInt(estrato)==2) {
+                descuento = ((pago) - (pago * 50) / 100);
+                
+            }
+            if (parseInt(estrato)==3) {
+                descuento = ((pago) - (pago * 30) / 100);
+                
+            }
+            
+             /**
+             *imprimimos las variables y definimos el subsidio con una condicion que valida el estrato e imprime el correcto.
+             */
+            document.write("Creditos comprados: "+creditos + "<br/>")
+            document.write("Valor de credito: "+valor + "<br/>")
+            document.write("Estrato: "+estrato + "<br/>")
+            document.write("Debe pagar: "+pago + "<br/>")
+            document.write("Debe pagar con descuento de estrato "+descuento + "<br/>")
+            
+            if (estrato==1) {
+                document.write("Subsidio: "+ 200000 + "<br/>")
+            }else if(estrato==2) {
+                document.write("Subsidio: "+ 100000 + "<br/>")
+            } else {
+                document.write("Subsidio: 0 <br/>")
+            }
+            
+           
+        </script>
+    </body>
+</html>

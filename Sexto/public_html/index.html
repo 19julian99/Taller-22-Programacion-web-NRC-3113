@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script type="text/javascript">
+            /**
+ * @fileoverview 
+ * @author Julian peñuela id:607452
+ * @version 0.1
+ * fecha:24/03/2020
+ */
+
+             /**
+                 * a cotninuacion tenemos un algoritmo que calcula que el sueldo de un empleado leemos los datos que 
+                 * necesitamos del usuario por medio de un prompt, tambien multiplicamos la horas trabajadas por el valor
+                 * de la hora pra saber el salario
+                 */ 
+            var nombre =  prompt("Ingrese  nombre");
+            var horas = prompt("Ingrese  horas");
+            var porHora=prompt("Ingrese  valor de horas");
+            var salarioBasico = 585000;
+            var ope=(parseInt(horas) * parseInt(porHora));
+            
+            /**
+                 * Imprimimos por los documentos que nos pide el usuario y 
+                 */
+            document.write("Nombre: "+nombre+"<br/>");
+            
+            document.write("Horas trabajadas "+horas+"<br/>");
+            document.write("Salario basico "+salarioBasico+"<br/>");
+            if (ope>=salarioBasico) {
+                     document.write("Salario mensual"+ope+"<br/>");
+                     } else {
+                         
+                         document.write("Salario mensual"+salarioBasico+"<br/>");
+                     }
+                     alert(ope)
+        </script>
+    </body>
+</html>

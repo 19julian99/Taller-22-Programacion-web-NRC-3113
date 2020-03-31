@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            /**
+             * @fileoverview 
+             * @author Julian peñuela id:607452
+             * @version 0.1
+             * fecha:24/03/2020
+             * 
+             * a continuacion definimos definimos y leemos las variables que necesitaremos para el desarrollo del
+             * problema.
+             * 
+             * tambien calculamos inicialmente el excedente del peso segun la condicion que nos plantea el proble de 
+             * 2000 por cada 10kg de mas
+             */
+            var peso=prompt("ingrese el peso");
+            var excede=(((peso-200)/10)*2000);
+           
+            var mercancia=prompt("ingrese el valor de mercancia");
+            var dia=prompt("Es lunes 1.Si  2.No");
+            var pago=prompt("Efectivo o tarjeta 1.Efectivo  2.Tarjeta");
+            var tarifa=0;
+            var promocion=0;
+            var descuento=0;
+            var pagar;
+       
+            /**
+             * A continuacon tenemos varios condicionames para validar la tarifa con base al peso
+             * vemos que el valor depende si es mayor a 100 y menor que 150 , mayor que 150 y menor que 200 
+             * , mayor a 200 y menor a 100.
+             */
+            if (parseInt(peso)<100) {
+            tarifa=20000;
+            }
+            if (parseInt(peso)>=100) {
+            if (parseInt(peso)<=150) {
+                tarifa=25000;
+            }
+            }
+            if (parseInt(peso)>150) {
+            if (parseInt(peso)<200) {
+                tarifa=30000;
+            }
+            }
+            if (parseInt(peso)>=200) {
+            tarifa=35000+excede;
+            
+            }
+              
+            /**
+             * ----------------------------------------------------
+             * a continuacion verificamos la condicion de que si es lunes y paga en tarjeta se le otroga una promocion tambien si 
+             * pagaba en efectivo y era el valor mayor a 10000, recordemos que si aplica a una promocion no podremos tener descuento
+             * y viceversa y eso lo calculamos abajo teniendo en cuenta el dia y el medio de pago .
+             * */
+            
+            if (parseInt(dia)==1) {
+            if (parseInt(pago)==2) {
+                promocion=(tarifa /2);
+                pagar = (tarifa /2);
+            }
+            }     
+            
+           
+            if (parseInt(mercancia)>1000000) {
+                if (parseInt(pago)==1) {
+                            promocion = ( (tarifa * 60) / 100);
+                            pagar =  (tarifa-(tarifa * 60) / 100);
+                        }
+                        }
+       
+            /**
+             * ----------------------------------------------------
+             * */
+           if (dia==2&&pago==2||mercancia<1000000&&pago==1) {
+                
+            if (parseInt(mercancia)>=300000) {
+            if (parseInt(mercancia)<=600000) {
+                pagar = ((tarifa) - (tarifa * 10) / 100);
+                descuento=((tarifa * 10) / 100);
+            }
+        }
+            }
+            if (dia==2&&pago==2||mercancia<1000000&&pago==1) {
+            if (parseInt(mercancia)>600000) {
+            if (parseInt(mercancia)<1000000) {
+                pagar = ((tarifa) - (tarifa * 20) / 100);
+                descuento=((tarifa * 20) / 100);
+            }
+        }
+            }
+            var des=0;
+            if (dia==2&&pago==2||mercancia<1000000&&pago==1) {
+            if (parseInt(mercancia)>=1000000) {
+            
+                pagar = ((tarifa) - (tarifa * 30) / 100);
+                descuento=((tarifa * 30) / 100);
+            }
+        }
+        
+        /**
+             * ----------------------------------------------------
+             * a continuacion imprimimos todos los datos y calculos que nos pide el programa por medio de la pagina web y llamando 
+             * a las variables respectivas.
+             * */
+            
+            
+            
+                
+            
+            
+           document.write("Peso mercancia :"+ peso + "<br/>")
+           document.write("Valor mercancia: "+ mercancia + "<br/>")
+           document.write("Es lunes 1.Si 2.No= "+ dia + "<br/>")
+           document.write("Efectivo o tarjeta 1.Efectivo  2.Tarjeta= "+ pago + "<br/>")
+           document.write("Tarifa: "+ tarifa + "<br/>")
+           document.write("Promocion: "+ promocion +"Descuento:"+descuento+ "<br/>")
+           document.write("Total a pagar: "+ pagar + "<br/>")
+           
+        </script>
+    </body>
+</html>

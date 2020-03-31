@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            /**
+             * @fileoverview 
+             * @author Julian peñuela id:607452
+             * @version 0.1
+             * fecha:24/03/2020
+             * 
+             * a continuacion definimos definimos y leemos una variable que sera el numero de escritorios
+             * luego de eso tenemos una variable llamada pagar que se multiplica el precio del mueble por 
+             * la cantidad
+             */
+            var num1 = prompt("Cuantos escritorios compro");
+            var cantidad = (parseInt(num1));
+            var precio = 650000;
+            var pagar = (precio * cantidad)
+            alert(pagar);
+            var descuento;
+            document.write("Numero de escritorios comprados" + cantidad + "<br/>")
+            /**
+             * a continuacion verificamos por medio de condicionales verificamos si las cantidades estan
+             * de acuerdo a la planteado y para calcular el descuento haremos una regla de 3 siemple cada uno
+             * con los porcentajes especificados en el enunciado del problema
+             */
+            if (cantidad < 5) {
+                descuento = ((pagar) - (pagar * 10) / 100);
+                 document.write("Debe pagar: "+descuento + "<br/>")
+
+            }
+            if (cantidad >= 5) {
+                if (cantidad < 10) {
+                    descuento = ((pagar) - (pagar * 20) / 100);
+                    document.write("Debe pagar: "+descuento + "<br/>")
+                }
+
+
+            }
+                if (cantidad >= 10) {
+                    descuento = ((pagar) - (pagar * 40) / 100);
+                     document.write("Debe pagar: "+descuento + "<br/>")
+                }
+              
+
+        </script> 
+    </body>
+</html>

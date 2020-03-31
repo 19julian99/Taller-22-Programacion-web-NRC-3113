@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            /**
+             * @fileoverview 
+             * @author Julian peñuela id:607452
+             * @version 0.1
+             * fecha:24/03/2020
+             * a continuacion leeremos y definiremos las variables que usaremos de datos de entrada, por medio de un promt. 
+             */
+        var cc=prompt("ingrese el costo de compra:");    
+        cc=parseInt(cc);
+        var tp=prompt("ingrese el tipo de produco:1.Prerecedero 2.No perecedero");    
+        tp=parseInt(tp);
+        var tc=prompt("ingrese el tipo de conservacion:1.frio 2.ambiente");    
+        tc=parseInt(tc);
+        var pc=prompt("ingrese el peridodo de conservacon en dias:");    
+        pc=parseInt(pc);
+        var pa=prompt("ingrese el periodo de almacenamiento en dias:");    
+        pa=parseInt(pa);
+        var vol=prompt("ingrese el volumen del producto:");    
+        vol=parseInt(vol);
+        var ma=prompt("seleccione almacenamiento:1.Nevera 2.Congelador 3.Estante 4.guacal");    
+        ma=parseInt(ma);
+        var vr_v=0;
+        var vr_p=0;
+        var ca=0;
+        var ce=0;
+        var pdp=0;
+        var caf;
+        var pdpf=0;
+        var cef=0;
+        
+        /**
+         *  a continuacion ingresamos las variables que definimos  y leemos anteriormente para pasarlas como parametro 
+         *  a la funcion en ella cada una de esta funciones realizar operaciones basicas para calcular el costo del almacenamiento.
+         * @param {type} ca
+         * @param {type} cc
+         * @param {type} tp
+         * @param {type} tc
+         * @param {type} pc
+         * @param {type} pa
+         * @param {type} vol
+         * @returns {type} ca
+         */
+        function CostoAlmacenamiento(ca,cc,tp,tc,pc,pa,vol) {
+            
+            /**
+             * validamos a continuacion el tipo de producto si es perecedero o si no lo es , de esto dependen
+             * de el calculo de costo del almacenamiento ademas tambien del periodo de contener.
+             */
+            if (tp==1) {
+                if (tc==1&&pc<10) {
+                ca=(cc*0.05);
+            }
+            if (tc==1&&pc>=10) {
+                ca=(cc*0.1);
+            }
+            if (tc==2&&pa<20) {
+                ca=(cc*0.03);
+            }
+            if (tc==2&&pa>20) {
+                ca=(cc*0.1);
+            }
+            if (tc==2&&pa==20) {
+                ca=(cc*0.05);
+            }
+            }
+             //---------------tp no perecedero--------------------
+            if (tp==2) {
+                if (vol>=50) {
+                ca=(cc*0.1);
+            }
+            if (vol<50) {
+                ca=(cc*0.2);
+            }
+            
+            }
+         
+         return ca;
+     }
+     
+     /**
+      * A contunuacion invocamos a la funcion para realizar el calculo  del procentaje de depresiacion 
+      * solo es un condicional si el peridoo de almacenamiento es mayor o menor a un N y se le asigna un valor de acuerdo a eso
+      * @param {type} tp
+      * @param {type} tc
+      * @param {type} ma
+      * @param {type} ce
+      * @param {type} caf
+      * @returns {Number|@var;caf}
+      */
+      caf=CostoAlmacenamiento(ca,cc,tp,tc,pc,pa,vol);
+      alert(caf);
+        
+        function Porcentaje(pdp,pa){
+            if (pa<30) {
+            pdp=0.95;
+            }
+            if (pa>=30) {
+            pdp=0.85;
+            }
+            return pdp;
+        }
+        pdpf=Porcentaje(pdp,pa);
+       
+        
+        /**
+         *  esta funcion calcula el valor del conto de excibicion basandose en comparar condicionales anidados con las variables que se le 
+         *  ingresan en pantalla en especial la de que si es prerecedero
+         * @param {type} tp
+         * @param {type} tc
+         * @param {type} ma
+         * @param {type} ce
+         * @param {type} caf
+         * @returns {Number|@var;caf}
+         */
+        function CostoEx(tp,tc,ma,ce,caf){
+            if (tp==1) {
+            if (tc==1&&ma==1) {
+                ce=caf*2;
+            }
+            if (tc==1&&ma==2) {
+                ce=caf;
+            }
+            }
+            
+             if (tp==2) {
+            if (ma==3) {
+                ce=caf*0.05;
+            }
+            if (ma==4) {
+                ce=caf*0.07;
+            }
+            }
+            
+            return ce;
+        }
+        
+        /**
+         * finalmente calculamos el costo de exhibicion final  y se calcula el valor de venta y el valor de compra 
+         *  del producto siguiendo el orden de operaciones dadas en el enunciado.
+         */
+        
+        cef=CostoEx(tp,tc,ma,ce,caf);
+        alert(cef);
+        
+        
+        var calcu;
+        calcu=((cc+caf+cef)*pdpf);
+        if (tp==2) {
+            vr_v=calcu+(calcu*0.2);
+        }
+        if (tp==1) {
+            vr_v=calcu+(calcu*0.4);
+        }
+        
+         document.write("Costo de compra ($)....................................................:"+ cc + "<br/>")
+         document.write("Tipo de producto [1]perecedero, [2]no perecedero..............................:"+ tp + "<br/>")
+         document.write("Tipo de conservacion [1]frio, [2]ambiente..............................:"+ tc + "<br/>")
+         document.write("Periodo de conservacion (dias)..............................:"+ pa + "<br/>")
+         document.write("Periodo de almacenamiento (dias)..............................:"+ pc + "<br/>")
+         document.write("Volumen.............................:"+ vol + "<br/>")
+         document.write("Medio de almacenamiento [1]Nevera, [2]Congelador, [3]Estanteria, [4]Guacal_......"+ ma + "<br/>")
+         document.write("--------------calculos----------------- <br/>")
+         document.write("Costo almacenamiento:.."+caf+"<br/>")
+         document.write("Porcentaje de depreciacion:.."+pdpf+"<br/>")
+         document.write("Costo exhibicion:.."+cef+"<br/>")
+         document.write("valor producto:.."+calcu+"<br/>")
+         document.write("valor venta:.."+vr_v+"<br/>")
+         
+        </script>
+    </body>
+</html>

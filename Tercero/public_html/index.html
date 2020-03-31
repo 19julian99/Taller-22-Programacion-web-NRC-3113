@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+    
+        <script>
+            /**
+             * @fileoverview 
+             * @author Julian peñuela id:607452
+             * @version 0.1
+             * fecha:24/03/2020
+             * 
+             * a continuacion definimos 3 variables y se las pido al usuario por un promt
+             * posteriormente defino 3 variables para las posiciones
+             */
+            var num1 = prompt("Ingrese  un numero");
+            var num2 = prompt("Ingrese  un numero");
+            var num3 = prompt("Ingrese  un numero");
+            alert(("numero1=" + num1));
+            alert(("numero2=" + num2));
+            alert(("numero3=" + num3));
+            var uno;
+            var dos;
+            var tres;
+            
+            
+            /**
+             * a continuacion tenemos 3 condicionales que validan cual es el mayor numero
+             */
+            if (num1 >= num2 && num1 >= num3) {
+                document.write("el numero mayor =" + num1+" ."+"<br/>");
+            }
+            if (num2 >= num1 && num2 >= num3) {
+                document.write("el numero mayor =" + num2+" ."+"<br/>");
+            }
+            if (num3 >= num2 && num3 >= num1) {
+                 document.write("el numero mayor =" + num3+" ."+"<br/>");
+            }
+            /**
+             * a continuacion tenemos 3 condicionales que validan cual es el  numero de la mitad
+             */
+            if (num1 >= num2 && num1 <= num3) {
+                document.write("el numero de la mitad =" + num1+" ."+"<br/>");
+            }
+            if (num2 >= num1 && num2 <= num3) {
+              document.write("el numero de la mitad =" + num2+" ."+"<br/>");
+            }
+            if (num3 >= num2 && num3 <= num1) {
+                document.write("el numero mayor =" + num3+" ."+"<br/>");
+            }
+            /**
+             * a continuacion tenemos 3 condicionales que validan cual es el menor numero
+             */
+            if (num1 <= num2 && num1 <= num3) {
+                document.write("el numero menor=" + num1+"<br/>");
+            }
+            if (num2 <= num1 && num2 <= num3) {
+               document.write("el numero menor=" + num2+"<br/>");
+            }
+            if (num3 <= num2 && num3 <= num1) {
+                document.write("el numero menor=" + num3+"<br/>");
+            }
+        </script>
+    </body>
+</html>
