@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+             /**
+              * Vamos a leer las  las 3 variables principales del problema
+             * @fileoverview 
+             * @author Julian peñuela id:607452
+             * @version 0.1
+             * fecha:24/03/2020
+             * 
+             * a continuacion tenemos ula serie de fibonacci que es la suma del numero anterior ma 
+             * el actual es igual al siguiente y asi sucesivamente,  tambien definimos las variables que usaremos y leemos
+             * el numero de terminos de la serie
+             *
+             */
+             var cantidad=prompt("Ingrese  cantidad de terminos");;
+             var camb1=1;
+             var camb2=1;
+             var cont=0;
+             /**
+              * imprimimos a continuacion la serie los primeros 3 numeros que son los primeros de la serie  y el resto 
+              * con la secuencia for en un ciclo de n hasta cantidad
+              */
+                document.write("Los "+cantidad+" terminos de la serie de fibonacci son:");
+                document.write("["+0 + "]");
+                document.write("["+camb1 + "]");
+                for (var i = 2; i <=cantidad; i++) {
+                    { 
+                         document.write("["+camb2 + "]");
+                         cont=cont+camb2;
+                        camb2 = camb1 + camb2;
+                        camb1 = camb2 - camb1;
+                       
+                    }
+                   
+                    
+                }
+                 document.write("el total es:"+cont);
+                
+            
+            
+            
+         </script>
+    </body>
+</html>

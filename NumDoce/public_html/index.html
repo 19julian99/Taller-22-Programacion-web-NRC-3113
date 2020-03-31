@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            /**
+             * A cotninuacion tenemos  imprimir una sumatoria desde un numero hasta un limiteusamos un ciclo for
+             * y declaramos variables para leer el limite por el usuario y las demas que nos serviran para los demas calculos
+             * @type type
+             */
+       var num1=prompt("Cuantos numeros desea:")
+        num1 = parseInt(num1);
+            var contador = 0;
+            var promedio = 0;
+            var sumatoria = 1;
+            /**
+             * a continuacion tenemos un ciclo for que nos iterara el numero que el usuario ingreso de veces
+             * adentro de el imprimiremos la variable i que sera la susecion de numeros y se almacenara
+             * la sumatoria en un contador 
+             * @type Number
+             */
+            for (var i = 1; i <= num1; i++) 
+                {
+                    document.write("["+i+"]");
+                    contador=contador+i;
+            
+        
+                }
+/**
+ * por ultimo imprimimos un espacio y relizamos el promedio que es la sumatoria total entre el numero de numeros que hay.
+ * y se imprimen.
+ */
+            document.write ("<br/>");
+            promedio = (contador / num1+"<br/>");
+            promedio=promedio;
+            document.write("La suma es:"+contador+"<br/>");
+            document.write("El promedio es: "+(promedio)+"<br/>");
+         </script>
+    </body>
+</html>

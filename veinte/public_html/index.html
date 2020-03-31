@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+           var numero=prompt("ingrese el numero a validar")
+         
+        var contador = 0;
+        var canti=0;
+        var sumatoria=0;
+        var promedio=0;
+        
+        for (var j = 1; j <=(numero*2); j++) {
+    
+
+                for (var i = 0; i <= (j+1); i++) {
+                    
+                        if ((j % i) === 0) {
+                            contador=contador+1;
+                        }
+                    
+                   
+                }
+                 if (contador <= 2) {
+                    document.write("["+j+" ]");
+                    sumatoria=sumatoria+j;
+                    canti=canti+1;
+                  
+                }
+                
+            contador = 0;
+    }
+   
+    promedio=sumatoria/canti;
+    document.write("<br/>"+"sumatoria total:"+sumatoria+"<br/>");
+    document.write("promedio total "+promedio+"<br/>");
+                
+  
+     
+
+        </script>
+    </body>
+</html>

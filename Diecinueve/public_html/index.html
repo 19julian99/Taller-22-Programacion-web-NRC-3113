@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+     
+     <script>
+           /**
+              * Vamos a leer las  las 3 variables principales del problema
+             * @fileoverview 
+             * @author Julian peñuela id:607452
+             * @version 0.1
+             * fecha:24/03/2020
+             * 
+             * a continuacion evaluaremos si un numero es primo o no , 
+             * la condicion es muy facil si el numero mod2 es igual a 0
+             * se le sube un contador si este contador es menor a 2 es primo si no no lo es
+             * el numero no es primo pero si no da 0 el numero si es primo
+             * 
+             * 
+             * 
+             * a continuacion definimos y leemos la variable numero y con est r¿se realiza rl calculo
+             *
+             */
+           var numero=prompt("ingrese el numero a validar")
+         
+        var contador = 0;
+                for (var i = 1; i <= numero; i++) {
+                    {
+                        if ((numero % i) === 0) {
+                            contador=contador+1;
+                        }
+                    }
+                    ;
+                }
+                if (contador <= 2) {
+                    document.write("El numero "+numero+" es primo");
+                }
+                else {
+                    document.write("El numero no "+numero+" es primo");
+                }
+  
+     
+       </script>
+    </body>
+</html>

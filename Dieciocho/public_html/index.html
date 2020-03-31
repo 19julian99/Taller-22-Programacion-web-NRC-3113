@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+       <script>
+             /**
+              * Vamos a leer las  las 3 variables principales del problema
+             * @fileoverview 
+             * @author Julian peñuela id:607452
+             * @version 0.1
+             * fecha:24/03/2020
+             * 
+             * a continuacion tenemos ula serie de fibonacci que es la suma del numero anterior ma 
+             * el actual es igual al siguiente y asi sucesivamente,  tambien definimos las variables que usaremos y leemos
+             * el numero de terminos de la serie
+             *
+             */
+             var cantidad=prompt("Ingrese  cantidad de terminos");
+             var camb1=0;
+             var camb2=1;
+             var camb3=2;
+             var aux=0;
+             var conta=0;
+             /**
+              * imprimimos a continuacion la serie los primeros 3 numeros que son los primeros de la serie  y el resto 
+              * con la secuencia for en un ciclo de n hasta cantidad
+              */
+            
+            /**
+             * añadimos una variable extra para guardar el numero qu enecesitamos y sumamos las 3 variables que piden.
+             */
+               
+                document.write("["+camb1 + "]"+"["+camb2 + "]"+"["+camb3 + "]");
+                for (var i = 0; i <cantidad-3; i++) 
+                    { 
+                         aux=camb1+camb2+camb3;
+                         conta=conta+aux;
+                         document.write("["+aux + "]");
+                         camb1=camb2;
+                        camb2 = camb3;
+                        camb3 = aux;
+                       
+                    }
+                    /**
+                     * por ultimo imprimimos el contador y el resultado final
+                     */
+                    conta=conta+3;
+                  document.write("el total es:"+conta);
+                    
+                 
+                   
+                    
+                
+                
+                
+            
+            
+       </script>
+    </body>
+</html>

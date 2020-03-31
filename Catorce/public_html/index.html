@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            /**
+ * Esta clase esta diseñada para reflejar en java la serie de Taylor  , todo
+ * es una sumatoria desde n =0 hasta infinito para mas precision, esta bajo la
+ * idea de divide y venseras, realizado cada calculo por partes y al final
+ * realizar la opinion pertinente.
+ *
+ * @author: Julian Alberto Peñuela Buitrago ID:607452
+ * @version: 15/02/2020
+ */
+            var factorial = 1;
+        var n =prompt("ingrese terminos:");
+        // A continuacion usamos el Integer.parseInt(br.readLine()); para leer el numero 
+         //al que se va a evaluar el seno.
+        /**
+         * @param x Es el numero que se recibe por medio de pantalla para
+         * evaluar la funcion seno x
+         * @param n n el numero de veces que se va a relizar la sumatoria , este
+         * numero no se dejo a disposicion del ususario ya que si el usuario por
+         * ejemplo ingresa n=1 y x=7 el exponente nos dara errado lo cual esta mal,
+         * por eso se determino que 10 es un n aceptable.
+         */
+        var x = prompt("ingrse el x:");
+        /**
+         * @param Sumatoria lo usaremos conmo una variable para llevar la
+         * sumatoria del ciclo que se repite y asi poder determinar el
+         * resultado, esta variable se inicializa en 1.
+         */
+        /**
+         * @param Factorial se inicializa en 1 debido que debemos multiplicar
+         * esta variable por otros numero ya que si la ponemos en 0 el resultado
+         * seria 0, siguiendo el principio del factorial que es (a=a*z) donde a
+         * es factorial y z el numero del ciclo , lo que hacemos ahi es decir a
+         * es igual a z por a , luego al siguiente ciclo se repite lo mismo
+         * hasta que se multiplica 1*2*3*4*n.. hasta llegar al factorial
+         * deseado.
+         */
+        /**
+         * @param Contenedor Esta variable se usa para almacenar la potencia del
+         * x para juntar todo en la operacion final, esta variable funciona como
+         * un contenedor, calcula la potencia con cada ciclo del for
+         * almacenandose ella misma por la X.
+         */
+        var sumatoria = 0;
+        var contenedor;
+        
+        /**
+         * A continuacion encontramos un ciclo For desde 1 hasta n, adentro de
+         * el realizamos las operacions de potencia, factorial, y se calcular el
+         * resultado de la sumatoria en la variable resultado.
+         */
+        for (var i = 0; i < n; i++) {
+            {
+                for (var j = 1; j <= i; j++) {
+                    {
+                        factorial = factorial * i;
+                    }
+                    ;
+                }
+                contenedor = Math.pow(x, i) / factorial;
+                sumatoria = sumatoria + contenedor;
+            }
+            ;
+        }
+        /**
+         * A continuacion se imprime por pantalla el resultado de la operacion.
+         */
+        document.write("El resultado de la serie es: " + sumatoria);
+        </script>
+    </body>
+</html>

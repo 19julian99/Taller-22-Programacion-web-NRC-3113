@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+             /**
+              * Vamos a leer las  las 3 variables principales del problema
+             * @fileoverview 
+             * @author Julian peñuela id:607452
+             * @version 0.1
+             * fecha:24/03/2020
+             * 
+             * a tinunuacion tenemos una variable pruba la cual se invocara en una funcion 
+             */
+            
+            var a=prompt("ingrese a");
+            var b=prompt("ingrese b");
+            var c=prompt("ingrese c");
+            
+            /**
+             * Vamos a dividir las operaciones que se encuentran contenidas debtro de la formula cuadratica
+             * como lo es el numero negativo, la cuadratica, y la raiz todo esto haciendo uso de la 
+             * las librerias Math de java script para la raiz y al final se calcula operacion.
+             * @type Number
+             */
+            var a1 = -b;
+            var b1 = b * b;
+            var c1 = (b * b) - (4 * a * c);
+            var x1 = (a1 + Math.sqrt(c1)) / (2 * a);
+            var x2 = (a1 - Math.sqrt(c1)) / (2 * a);
+            document.write("x1:" + x1+"<br/>");
+            document.write("x2:" + x2+"<br/>");
+            document.write("Si le sale NaN es por que ustes ingreso la ecuacion"+a+"x^2+"+b+"x+"+c+"y esta ecuacion por lo tento no es una cuadratica correcta"+"<br/>");
+         
+            
+            
+            
+        </script>
+    </body>
+</html>

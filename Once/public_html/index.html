@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+        var ruta=prompt("seleccione la ruta [1][2][3][4]:");    
+        ruta=parseInt(ruta);
+        var viajes=prompt("ingrese el numero de viajes:");    
+        viajes=parseInt(viajes);
+        var pasajeros=prompt("ingrese el numero de pasajeros:");    
+        pasajeros=parseInt(pasajeros);
+        var encomiendas1=prompt("ingrese el numero de encomiendas menores 10kg:");    
+        encomiendas1=parseInt(encomiendas1);
+        var encomiendas12=prompt("ingrese el numero de encomiendas entre 10kg y 20kg:");    
+        encomiendas12=parseInt(encomiendas12);
+        var encomiendas2=prompt("ingrese el numero de encomiendas mayores 20kg:");    
+        encomiendas2=parseInt(encomiendas2);
+        var exce;
+        var v_ruta;
+        var rutaf;
+        var v_enco1;
+        var v_enco2;
+        var conta=0;
+        var ayudante;
+        var encomi=0
+        var seguro=0;;
+        var gaso=0;
+        
+        
+        if (ruta==1) {
+        v_ruta=500000;
+        }
+        if (ruta==2) {
+        v_ruta=600000;
+        }
+        if (ruta==3) {
+        v_ruta=800000;
+        }
+        if (ruta==4) {
+        v_ruta=1000000;
+        }
+        
+        function IngresosPasajeros(ruta,pasajeros,exce,v_ruta){
+            if (ruta==1) {
+                if (pasajeros<=50) {
+                v_ruta=v_ruta;
+            }
+            
+            if (pasajeros>50&&pasajeros<=100) {
+                v_ruta=v_ruta+(v_ruta*0.05);
+            }
+             if (pasajeros>100&&pasajeros<=150) {
+                v_ruta=v_ruta+(v_ruta*0.06);
+            }
+             if (pasajeros>151&&pasajeros<=200) {
+                v_ruta=v_ruta+(v_ruta*0.07);
+            }
+            if (pasajeros>200) {
+                v_ruta=v_ruta+(v_ruta*0.07);
+                exce=(pasajeros-200)*50;
+                v_ruta=v_ruta+exce;
+            }
+            
+            }
+            /**
+             * condiciones ruta 2
+             */
+            
+            if (ruta==2) {
+                if (pasajeros<=50) {
+                v_ruta=v_ruta;
+            }
+            
+            if (pasajeros>50&&pasajeros<=100) {
+                v_ruta=v_ruta+(v_ruta*0.07);
+            }
+             if (pasajeros>100&&pasajeros<=150) {
+                v_ruta=v_ruta+(v_ruta*0.08);
+            }
+             if (pasajeros>151&&pasajeros<=200) {
+                v_ruta=v_ruta+(v_ruta*0.09);
+            }
+            if (pasajeros>200) {
+                v_ruta=v_ruta+(v_ruta*0.07);
+                exce=(pasajeros-200)*60;
+                v_ruta=v_ruta+exce;
+            }
+            
+            }
+            /**
+             * condiciones ruta 3
+             */
+            
+            if (ruta==3) {
+                if (pasajeros<=50) {
+                v_ruta=v_ruta;
+            }
+            
+            if (pasajeros>50&&pasajeros<=100) {
+                v_ruta=v_ruta+(v_ruta*0.1);
+            }
+             if (pasajeros>100&&pasajeros<=150) {
+                v_ruta=v_ruta+(v_ruta*0.13);
+            }
+             if (pasajeros>151&&pasajeros<=200) {
+                v_ruta=v_ruta+(v_ruta*0.15);
+            }
+            if (pasajeros>200) {
+                v_ruta=v_ruta+(v_ruta*0.015);
+                exce=(pasajeros-200)*100;
+                v_ruta=v_ruta+exce;
+            }
+            
+            }
+            /**
+             * condiciones ruta 4
+             */
+            
+            if (ruta==4) {
+                if (pasajeros<=50) {
+                v_ruta=v_ruta;
+            }
+            
+            if (pasajeros>50&&pasajeros<=100) {
+                v_ruta=v_ruta+(v_ruta*0.125);
+            }
+             if (pasajeros>100&&pasajeros<=150) {
+                v_ruta=v_ruta+(v_ruta*0.15);
+            }
+             if (pasajeros>151&&pasajeros<=200) {
+                v_ruta=v_ruta+(v_ruta*0.17);
+            }
+            if (pasajeros>200) {
+                v_ruta=v_ruta+(v_ruta*0.17);
+                exce=(pasajeros-200)*150;
+                v_ruta=v_ruta+exce;
+            }
+            
+            }
+        
+            
+            return v_ruta;
+        }
+        
+      var rutaf=IngresosPasajeros(ruta,pasajeros,exce,v_ruta);
+     
+      conta=conta+rutaf;
+     
+      
+      
+      function CalcularEncomiendaMenos10R12(ruta,encomiendas1,v_enco1,){
+          if (ruta==1||ruta==2) {
+              if (encomiendas1<=50) {
+            v_enco1=100;
+            }
+            if (encomiendas1>=50&&encomiendas1<=100) {
+            v_enco1=120;
+            }
+            if (encomiendas1>=101&&encomiendas1<=130) {
+            v_enco1=150;
+            }
+            if (encomiendas1>130) {
+                      v_enco1 = 160;
+                  }
+              }
+              return v_enco1;
+              
+    }
+          
+          var enco10f=0;
+          enco10f=CalcularEncomiendaMenos10R12(ruta,encomiendas1,v_enco1);
+          if (ruta==1||ruta==2) {
+                conta=conta+enco10f;
+                encomi=encomi+enco10f;
+                      alert("aqui"+conta)
+            }
+          
+      
+        
+        
+        
+        function CalcularEncomiendaMas10R12(ruta,encomiendas12,v_enco2){
+          
+        if (ruta==1||ruta==2) {
+              if (encomiendas12<=50) {
+            v_enco2=120;
+            }
+            if (encomiendas12>=50&&encomiendas12<=100) {
+            v_enco2=140;
+            }
+            if (encomiendas12>=101&&encomiendas12<=130) {
+            v_enco2=160;
+            }
+            if (encomiendas12>130) {
+                      v_enco2 = 180;
+                  }
+              }
+          return v_enco2;
+              
+    }
+          
+          var encom10f=0;
+          encom10f=CalcularEncomiendaMas10R12(ruta,encomiendas12,v_enco2);
+          if (ruta==1||ruta==2) {
+    conta=conta+encom10f;
+    encomi=encomi+encom10f;
+          
+}
+        
+        /**
+         * 
+         */
+        
+        function CalcularEncomiendaMenos10R34(ruta,encomiendas1,v_enco1){
+          if (ruta==3||ruta==4) {
+              if (encomiendas1<=50) {
+            v_enco1=130;
+            }
+            if (encomiendas1>=50&&encomiendas1<=100) {
+            v_enco1=160;
+            }
+            if (encomiendas1>=101&&encomiendas1<=130) {
+            v_enco1=175;
+            }
+            if (encomiendas1>130) {
+                      v_enco1 = 200;
+                  }
+              }
+              return v_enco1;
+              
+    }
+          
+          var enco210f=0;
+          enco210f=CalcularEncomiendaMenos10R34(ruta,encomiendas1,v_enco1);
+         if (ruta==3||ruta==4) {
+            conta=conta+enco210f;
+            encomi=encomi+enco210f;
+                  
+        }
+        
+        
+    function CalcularEncomiendaEntreR34(ruta,encomiendas12,v_enco2){
+          
+        if (ruta==3|ruta==4) {
+              if (encomiendas12<=50) {
+            v_enco2=140;
+            }
+            if (encomiendas12>=50&&encomiendas12<=100) {
+            v_enco2=180;
+            }
+            if (encomiendas12>=101&&encomiendas12<=130) {
+            v_enco2=200;
+            }
+            if (encomiendas12>130) {
+                      v_enco2 = 250;
+                  }
+              }
+          return v_enco2;
+              
+    }
+          
+          var encom12f=0;
+          encom12f=CalcularEncomiendaEntreR34(ruta,encomiendas12,v_enco2);
+          if (ruta==3||ruta==4) {
+            conta=conta+encom12f;
+            encomi=encomi+encom12f;
+                 
+        }
+         
+          
+          /**
+           * 
+           */
+           function CalcularEncomiendaMasR34(ruta,encomiendas2,v_enco2){
+          
+        if (ruta==3|ruta==4) {
+              if (encomiendas2<=50) {
+            v_enco2=170;
+            }
+            if (encomiendas2>=50&&encomiendas2<=100) {
+            v_enco2=210;
+            }
+            if (encomiendas2>=101&&encomiendas2<=130) {
+            v_enco2=250;
+            }
+            if (encomiendas2>130) {
+                      v_enco2 = 300;
+                  }
+              }
+          return v_enco2;
+              
+    }
+          
+          var encom2f=0;
+                  ecom2f=CalcularEncomiendaMasR34(ruta,encomiendas2,v_enco2);
+          
+          if (ruta==3||ruta==4) {
+            conta=conta+ecom2f;
+             encomi=encomi+ecom2f;
+                  
+        }
+
+
+     
+     /**
+      * 
+      */
+
+      if (conta<1000000) {
+            ayudante=conta*0.05;
+        }
+        
+         if (conta>1000000&&conta<2000000) {
+            ayudante=conta*0.08;
+        }
+        
+        if (conta>2000000&&conta<4000000) {
+            ayudante=conta*0.1;
+        }
+        if (conta>4000000) {
+            ayudante=conta*0.13;
+        }
+          
+          
+          
+          
+          
+          var pesoGalo=pasajeros*60;
+          if (ruta==1&&pesoGalo<=5000) {
+                gaso=((150*viajes/39)*8860);
+           }
+           if (ruta==1&&pesoGalo>=5000&&pesoGalo<=10000) {
+                gaso=((150*viajes/39)*8860);
+                gaso=(gaso+(gaso*0.1))
+           }
+          if (ruta==1&&pesoGalo>=10000) {
+                gaso=((150*viajes/39)*8860);
+                gaso=(gaso+(gaso*0.25))
+           }
+           
+           
+           /**
+            * 
+            */
+           
+           var pesoGalo=pasajeros*60;
+          if (ruta==2&&pesoGalo<=5000) {
+                gaso=((167*viajes/39)*8860);
+           }
+           if (ruta==2&&pesoGalo>=5000&&pesoGalo<=10000) {
+                gaso=((167*viajes/39)*8860);
+                gaso=(gaso+(gaso*0.1))
+           }
+          if (ruta==2&&pesoGalo>=10000) {
+                gaso=((167*viajes/39)*8860);
+                gaso=(gaso+(gaso*0.25))
+           }
+           /**
+            * 
+            */
+           var pesoGalo=pasajeros*60;
+          if (ruta==3&&pesoGalo<=5000) {
+                gaso=((184*viajes/39)*8860);
+           }
+           if (ruta==3&&pesoGalo>=5000&&pesoGalo<=10000) {
+                gaso=((184*viajes/39)*8860);
+                gaso=(gaso+(gaso*0.1))
+           }
+          if (ruta==3&&pesoGalo>=10000) {
+                gaso=((203*viajes/39)*8860);
+                gaso=(gaso+(gaso*0.25))
+           }
+           
+           var pesoGalo=pasajeros*60;
+          if (ruta==4&&pesoGalo<=5000) {
+                gaso=((203*viajes/39)*8860);
+           }
+           if (ruta==4&&pesoGalo>=5000&&pesoGalo<=10000) {
+                gaso=((203*viajes/39)*8860);
+                gaso=(gaso+(gaso*0.1))
+           }
+          if (ruta==4&&pesoGalo>=10000) {
+                gaso=((203*viajes/39)*8860);
+                gaso=(gaso+(gaso*0.25))
+           }
+           
+           /**
+            * 
+            */
+           
+           if (conta<1000000) {
+            seguro=conta*0.03;
+        }
+        
+         if (conta>1000000&&conta<2000000) {
+            seguro=conta*0.04;
+        }
+        
+        if (conta>2000000&&conta<4000000) {
+            seguro=conta*0.06;
+        }
+        if (conta>4000000) {
+            seguro=conta*0.09;
+        }
+           document.write("-------Datos de entrada-----" + "<br/>")
+           document.write("ruta="+ ruta + "<br/>")
+           document.write("Numero de viajes="+ viajes + "<br/>")
+           document.write("Numero depasajeros="+ pasajeros + "<br/>")
+           document.write("Numero de encomiendas menos de 10kg="+ encomiendas1 + "<br/>")
+          document.write("Numero de encomiendas menos de 10kg="+ encomiendas12 + "<br/>")
+          document.write("Numero de encomiendas menos de 10kg="+ encomiendas2 + "<br/>")
+           document.write("-------calculos-----" + "<br/>")
+           
+            document.write("Ingresos de pasajeros" +v_ruta +"<br/>")
+            document.write("Ingresos de encomiendas" + encomi+"<br/>")
+            var toti=ayudante+gaso+seguro;
+            var finao=conta-toti;
+            var ing=v_ruta+encomi;
+            document.write("Ingresos totales:" +conta +"<br/>")
+            document.write("pago ayudante:" + ayudante+"<br/>")
+            document.write("pago Seguro:" + seguro+"<br/>")
+            document.write("pago combustible:" + gaso+"<br/>")
+            document.write("total deducciones:" + toti+"<br/>")
+            document.write("total a liquidar:" + finao+"<br/>")
+          
+          
+          
+          
+        </script>
+    </body>
+</html>

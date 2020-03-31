@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            /**
+             * A cotninuacion tenemos  imprimir una sumatoria desde un numero hasta un limite usamos un ciclo for
+             * y declaramos variables para leer el numero deceado por el usuario .
+             * @type type
+             */
+       var num1=prompt("ingrese numero:")
+        num1 = parseInt(num1);
+            var contador = 1;
+            
+            /**
+             * a continuacion tenemos un ciclo for que nos iterara el numero que el usuario ingreso de veces
+             * adentro de el imprimiremos la variable i que sera la susecion de numeros y se almacenara
+             * la sumatoria de multiplicaciones en un contador 
+             * @type Number
+             */
+            for (var i = 1; i <= num1; i++) 
+                {
+                    document.write("["+i+"]");
+                    contador=contador*i;
+            
+        
+                }
+/**
+ * por ultimo imprimimos un espacio y las variable que hay.
+ * y se imprimen.
+ */
+            document.write ("<br/>");
+            document.write("El numero ingresado es: "+(num1)+"<br/>")
+            document.write ("------------------------------------------<br/>");
+            document.write("Factorial es:"+contador+"<br/>");
+           
+         </script>
+    </body>
+</html>
